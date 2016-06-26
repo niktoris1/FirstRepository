@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>How to exterminate a planet</title>
+    <link rel="stylesheet" href="/normalize.css">
+    <style>
+        html {
+            height: 100%;
+            background: #5F7823;
+        }
+
+        .header-wrapper {
+            width: 100%;
+            height: 10%;
+            background: #7B953F;
+            margin:0;
+            position: fixed;
+            float: top;
+            overflow: auto;
+        }
+
+        .fixed {
+            position: fixed;
+            top: -30px;
+        }
+
+        #header > h1 {
+            margin: 0;
+        }
+
+        header {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        body {
+            height: 100%;
+        }
+
+        div menu {
+            padding: 0;
+
+        }
+
+        div menu ul {
+            list-style: none;
+            padding: 5px;
+        }
+
+
+        #menu {
+            margin: 20px;
+        }
+
+        #menu-wrapper {
+            width: 10%;
+            background: #296A1F;
+            float: left;
+            position: fixed;
+            top: 10%;
+            bottom: 10%;
+        }
+
+
+        #main {
+            height: 100%;
+            width: 90%;
+            overflow: auto;
+            background-image: url("http://entropymag.org/wp-content/uploads/2014/10/outer-space-wallpaper-pictures.jpg");
+            background-repeat: round;
+            background-size: cover;
+            float: right;
+            color: #5F7823;
+        }
+
+
+        #footer {
+            height: 10%;
+            width: 100%;
+            background: #7B953F;
+            float: bottom;
+            overflow: auto;
+        }
+
+        .content {
+            max-width: 800px;
+            max-height: 300px;
+            margin: 10px auto;
+            padding: 10px 10px;
+            background: #296A1F;
+            border: 2px solid #243400;
+        }
+
+        #content1 {
+            height: 20%;
+            width: 60%;
+            max-width: 1600px;
+            overflow: scroll;
+        }
+
+        #content2 {
+            height: 5%;
+            width: 60%;
+            max-width: 800px;
+            margin-top: 10%;
+
+        }
+
+        #backend-wrapper {
+            height: 15%;
+            width: 60%;
+            max-width: 1000px;
+            overflow: scroll;
+        }
+
+        #content-wrapper {
+            width: 90%;
+            float:right;
+        }
+
+        a {
+            display: inline-block;
+            background: #418337;
+            margin: 5px;
+            padding: 2px;
+            border-radius: 2px;
+        }
+
+        .inline-img {
+            margin: auto;
+        }
+
+        #choice {
+            background: #5F7823;
+            width: 90%;
+            height: 10%;
+            float: right;
+        }
+
+        .footer-links {
+            width: 20%;
+            display: inline-block;
+            background: #418337;
+            margin: 5px;
+            padding: 2px;
+            border-radius: 2px;
+        }
+
+        .header-links {
+            width: 20%;
+            margin: 5px;
+            padding: 2px;
+            border-radius: 2px;
+            display: inline-block;
+        }
+
+
+        .up-button {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            position: fixed;
+            bottom: 20px;
+            right: 50px;
+            background: lightskyblue;
+            text-align: center;
+        }
+
+        .down-button {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            position: fixed;
+            bottom: 20px;
+            left: 40px;
+            background: darkred;
+            text-align: center;
+        }
+
+        .grid-1 {
+            width: 6.5%;
+        }
+        .grid-2 {
+            width: 15%;
+        }
+        .grid-3 {
+            width: 23.5%;
+        }
+        .grid-4 {
+            width: 32%;
+        }
+        .grid-5 {
+            width: 40.5%;
+        }
+        .grid-6 {
+            width: 49%;
+        }
+        .grid-7 {
+            width: 57.5%;
+        }
+        .grid-8 {
+            width: 66%;
+        }
+        .grid-9 {
+            width: 74.5%;
+        }
+        .grid-10 {
+            width: 83%;
+        }
+        .grid-11 {
+            width: 91.5%;
+        }
+        .grid-12 {
+            width: 100%;
+        }
+
+        .container {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .container > [class^="grid-"] {
+            margin-left: 2%;
+            float:left;
+        }
+        .container > [class^="grid-"]:first-child {
+            margin-left: 0%;
+        }
+
+        .container > [class^="grid-"]:last-child {
+            float:right
+        }
+
+        #insult {
+            width: 100%;
+            color: red;
+        }
+
+        @media(max-width:1200px) {
+
+            .header-wrapper{
+                overflow: scroll;
+                text-align: center
+            }
+            .header-links{
+                display:block;
+                width: calc(100% - 14px);
+                text-align: center;
+            }
+
+            #footer{
+                overflow: scroll;
+                text-align: center
+            }
+            .footer-links{
+                display:block;
+                width: calc(100% - 14px);
+                text-align: center;
+            }
+
+            .inline-img {
+                display:none;
+            }
+
+            #content1 {
+                overflow: scroll;
+            }
+        }
+
+        @media(max-width:1000px) {
+            #menu-wrapper {
+                display: none;
+            }
+            #main {
+                width: 100%;
+            }
+        }
+
+        @media(min-width: 800px) {
+            #insult {
+                display: none;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="header-wrapper">
+    <div id="header">
+        <div id="insult"> Wow, your phone sucks. Like really. No offence.</div>
+        <h1 style="text-align: center" style="position: fixed">Exterminatus</h1>
+        <div style="margin: 0 auto" id="header-links-wrapper">
+            <a class="header-links" href="http://www.nyan.cat/">Link1</a>
+            <a class="header-links" href="http://www.nyan.cat/">Link2</a>
+            <a class="header-links" href="http://www.nyan.cat/">Link3</a>
+            <a class="header-links" href="http://www.nyan.cat/">Link4</a>
+        </div>
+    </div>
+</div>
+
+<div id="menu-wrapper">
+    <div id="menu">
+        <strong>Menu</strong>
+        <menu>
+            <ul>
+                <li>
+                    <a href="https://google.com">Google</a>
+                </li>
+                <li>
+                    <a href="index.ejs">Home</a>
+                </li>
+            </ul>
+        </menu>
+    </div>
+</div>
+
+<div id="content-wrapper">
+
+    <div id="content2" class="content">
+        Please, read following licence agreement before you continue
+    </div>
+
+    <div id="content1" class="content">
+        <ul>
+            <li>I promise not to destroy any planets without permission of my parents</li>
+            <li>I promise not to destroy any planets without permission of my parents</li>
+            <li>I promise not to destroy any planets without permission of my parents</li>
+            <li>I promise not to destroy any planets without permission of my parents</li>
+            <li>I promise not to destroy any planets without permission of my parents</li>
+            <li>I promise not to destroy any planets without permission of my parents</li>
+            <li>I promise not to destroy any planets without permission of my parents</li>
+            <li>I promise not to destroy any planets without permission of my parents</li>
+            <li>I promise not to destroy any planets without permission of my parents</li>
+            <li>I promise not to destroy any planets without permission of my parents</li>
+            <li>I promise not to destroy any planets without permission of my parents</li>
+            <li>I promise not to destroy any planets without permission of my parents</li>
+            <li>I promise not to destroy any planets without permission of my parents</li>
+            <li>I promise not to destroy any planets without permission of my parents</li>
+            <li>I promise not to destroy any planets without permission of my parents</li>
+            <li>I promise not to destroy any planets without permission of my parents</li>
+        </ul>
+    </div>
+
+    <div id="backend-wrapper" class="content">
+
+        <strong style="text-align: center">Choose the destiny of this little planets!</strong>
+
+        <% var i=1; items.forEach( function (item) {%>
+        <div class="entry">
+            <div>
+                Planet ID <%=i%>. <%=item.PlanetName%>
+                Planet Value: <%=item.PlanetValue%>
+                BoomSound: <%=item.BoomSound%>
+                <button class="remove" data-id='<%=item.ID%>'>Undestroy</button>
+            </div>
+
+
+        </div>
+        <%i++; });%>
+
+        <table id="form" class="">
+            <tr>
+                <td>
+                    Planet name
+                </td>
+                <td>
+                    <label><input id="planet_name" name="planet_name" /></label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Planet value
+                </td>
+                <td>
+                    <label><input id="planet_value" name="planet_value" /></label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Boom sound
+                </td>
+                <td>
+                    <label><input id="boom_sound" name="boom_sound" /></label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" name="button" value="destroy" id="add_button" /></td>
+            </tr>
+        </table>
+
+        <script>
+            var form = document.querySelector("#form");
+            var planet_name = form.querySelector("#planet_name");
+            var planet_value = form.querySelector("#planet_value");
+            var boom_sound = form.querySelector("#boom_sound");
+            form.querySelector("#add_button").addEventListener('click', function(){
+                var request = new XMLHttpRequest();
+                var request_text = 'add?planet_name=' + encodeURIComponent(planet_name.value) +
+                        '&planet_value=' + encodeURIComponent(planet_value.value) +
+                        '&boom_sound=' + encodeURIComponent(boom_sound.value);
+                request.open('post', request_text);
+                request.send();
+                request.addEventListener('load', function () {
+                    location.replace('/');
+                });
+            });
+            var buttons = document.querySelectorAll('.remove');
+            for(var i = 0; i < buttons.length; i++){
+                buttons[i].addEventListener('click', function() {
+                    var itemId = this.getAttribute('data-id');
+                    var request = new XMLHttpRequest();
+                    var request_text = 'delete?id=' + encodeURIComponent(itemId);
+                    request.open('delete', request_text);
+                    request.send();
+                    request.addEventListener('load', function () {
+                        location.reload();
+                    });
+                });
+            }
+        </script>
+    </div>
+
+</div>
+
+
+<div id="main">
+    <div>
+        <img class="inline-img" style="float:right"; src="http://sd.keepcalm-o-matic.co.uk/i/keep-calm-and-call-for-exterminatus.png">
+        <span>
+             Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome toWelcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome toWelcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome toWelcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome toWelcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome toWelcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome toWelcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome toWelcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome toWelcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome toWelcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to  Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome toWelcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to
+        </span>
+        <img class="inline-img" style="float:left"; src="http://sd.keepcalm-o-matic.co.uk/i/keep-calm-and-call-for-exterminatus.png">
+        <span>
+             Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome toWelcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome toWelcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome toWelcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome toWelcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome toWelcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome toWelcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome toWelcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome toWelcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome toWelcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to  Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome toWelcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to the world of ultimate destruction. Welcome to
+        </span>
+    </div>
+
+    <div>' '</div>
+
+    <div style="text-align: center"><strong>HERE COMES YOUR GREED! Spoiler alert: that is a joke</strong></div>
+
+    <div>' '</div>
+
+    <div class="container">
+            <div class="grid-4">
+                Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother.
+            </div>
+            <div class="grid-4">
+                Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother.
+            </div>
+            <div class="grid-4">
+                Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother. Welcome to the world of grid, brother.
+            </div>
+   </div>
+</div>
+
+<div id="choice">
+    <div>
+        Choose a number of planets to exterminate.
+    </div>
+
+    <select>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+    </select>
+
+    <button>
+        Utterly useless button
+    </button>
+</div>
+
+
+<div id="footer">
+    <a class="footer-links" href="http://www.nyan.cat/">Contacts</a>
+    <a class="footer-links" href="http://www.nyan.cat/">Contacts</a>
+    <a class="footer-links" href="http://www.nyan.cat/">Contacts</a>
+    <a class="footer-links" href="http://www.nyan.cat/">Guess what</a>
+</div>
+
+<div class="down-button"> <span style="text-align:center">To Satan</span> </div>
+
+<div class="up-button"> <span style="text-align:center">To God</span> </div>
+
+
+<script>
+    (function () {
+        var scroll = function(){
+            var body = document.querySelector("body");
+            if(body.scrollTop>30    ) {
+                document.querySelector(".header-wrapper").classList.add('fixed');
+            } else {
+                document.querySelector(".header-wrapper").classList.remove('fixed');
+            }
+        };
+        var timer;
+        window.addEventListener('scroll', function() {
+            if(timer==null) {
+                scroll();
+                timer = window.setTimeout(function() {
+                    timer = null;
+                    scroll();
+                }, 20);
+            }
+        });
+    })()
+</script>
+
+<script>
+    (function() {
+        document.querySelector(".up-button").addEventListener('click', function() {
+            window.scrollTo(0, 0);
+        })
+    })()
+</script>
+
+<script>
+    (function() {
+        document.querySelector(".down-button").addEventListener('click', function() {
+            window.scrollTo(0,window.innerHeight);
+        })
+    })()
+</script>
+
+</body>
